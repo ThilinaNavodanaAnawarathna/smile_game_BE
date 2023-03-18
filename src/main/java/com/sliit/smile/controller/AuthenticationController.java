@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/authentication")
 public class AuthenticationController {
-    private UserService userService;
+    private final UserService userService;
     private final AuthenticationService authenticationService;
 
     public AuthenticationController(UserService userService, AuthenticationService authenticationService) {
@@ -29,6 +29,7 @@ public class AuthenticationController {
         return new ResponseEntity<>(userService.save(user), HttpStatus.CREATED);
 
     }
+
     @PostMapping("sign-in")//api/authentication/sign-in
     public ResponseEntity<?> signIn(@RequestBody User user) {
         return new ResponseEntity<>(authenticationService.signInAndReturnJWT(user), HttpStatus.OK);

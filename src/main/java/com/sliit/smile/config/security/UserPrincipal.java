@@ -1,7 +1,6 @@
 package com.sliit.smile.config.security;
 
 
-
 import com.sliit.smile.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

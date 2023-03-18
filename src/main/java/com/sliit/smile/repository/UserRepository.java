@@ -8,7 +8,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<User,String > {
+public interface UserRepository extends JpaRepository<User, String> {
     List<User> findAllByUsername(String username);
+
     Optional<User> findByUsername(String username);
+
+    Optional<User> findById(Long id);
+
 }
